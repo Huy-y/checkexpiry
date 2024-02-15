@@ -1,7 +1,15 @@
 // JavaScript code
 const expiryData = [
-  { account: "Komaz", dateBuy: "01/01/2024", dateExpiry: "01/01/2025" },
-  { account: "huytranz", dateBuy: "01/01/2024", dateExpiry: "14/02/2024" },
+  {
+    account: "Komaz",
+    dateBuy: "01/01/2024",
+    dateExpiry: "01/01/2025 - 12:30:45",
+  },
+  {
+    account: "huytranz",
+    dateBuy: "01/01/2024",
+    dateExpiry: "15/02/2024 - 18:30:00",
+  },
   // Thêm dữ liệu cho các tài khoản khác tùy theo nhu cầu của bạn
 ];
 
