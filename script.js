@@ -73,6 +73,25 @@ const expiryData = [
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
+  // Câu cá
+  {
+    id: 13,
+    account: "AkazaSlayer",
+    dateBuy: "01/01/2024 - 00:00:00",
+    dateExpiry: "01/01/9999 - 00:00:00",
+  },
+  {
+    id: 14,
+    account: "Auror",
+    dateBuy: "01/01/2024 - 00:00:00",
+    dateExpiry: "01/01/9999 - 00:00:00",
+  },
+  {
+    id: 15,
+    account: "Sylvie",
+    dateBuy: "01/01/2024 - 00:00:00",
+    dateExpiry: "01/01/9999 - 00:00:00",
+  },
 ];
 
 const tableBody = document.querySelector("#expiryTable tbody");
