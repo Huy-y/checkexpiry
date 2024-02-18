@@ -1,108 +1,94 @@
 const expiryData = [
   // Acc Player
   {
-    id: 1,
     account: "Komaz",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 2,
     account: "huytranz",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 3,
-    account: "vahia8315",
-    dateBuy: "15/02/2024 - 00:00:00",
-    dateExpiry: "15/02/2024 - 22:50:00",
-  },
-  {
-    id: 4,
     account: "DuyGiuy",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 5,
     account: "HySatou",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 6,
     account: "HutCo",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 6,
     account: "hakdenis",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   // Acc AutoClick
   {
-    id: 8,
     account: "OmaReturn",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 9,
     account: "JustPotato",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 10,
     account: "LightTeki",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 11,
     account: "khang6a4",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 12,
     account: "Trieocayy",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 13,
     account: "Cuei0h",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   // Câu cá
   {
-    id: 14,
     account: "AkazaSlayer",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 15,
     account: "Auror",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    id: 16,
     account: "Sylvie",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
+  },
+  // Acc test
+  {
+    account: "vahia8315",
+    dateBuy: "15/02/2024 - 00:00:00",
+    dateExpiry: "15/02/2024 - 22:50:00",
   },
 ];
 
 const tableBody = document.querySelector("#expiryTable tbody");
 const buyDateRegex = /^(\d{2})\/(\d{2})\/(\d{4}) - (\d{2}):(\d{2}):(\d{2})$/;
 const expiryDateRegex = /^(\d{2})\/(\d{2})\/(\d{4}) - (\d{2}):(\d{2}):(\d{2})$/;
+let idCounter = 1; // Biến đếm ID
 
 expiryData.forEach((data) => {
   const row = document.createElement("tr");
@@ -132,6 +118,8 @@ expiryData.forEach((data) => {
   if (YearExpiry.includes("9999")) {
     duration = "Vô Hạn";
     timeleft = "Vô Hạn";
+    row.classList.add("md:bg-blue-100");
+    row.style.display = "none";
   } else {
     const buyDateTime = new Date(
       YearBuy,
@@ -149,7 +137,6 @@ expiryData.forEach((data) => {
       MinuteExpiry,
       SecondExpiry
     );
-
     timeleft = calculateTimeLeft(expiryDateTime);
     const diffInMs = expiryDateTime - buyDateTime;
     const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
@@ -182,6 +169,13 @@ expiryData.forEach((data) => {
     }
   }
 
+  if (timeleft == "Đã hết hạn") {
+    row.classList.add("md:bg-red-300");
+  } else {
+    row.classList.add("md:bg-green-100");
+  }
+
+  data.id = idCounter++;
   // Tạo nội dung cho hàng
   row.innerHTML = `
         <td class="font-semibold py-2 text-center border-r border-t">${data.id}</td>
@@ -230,3 +224,11 @@ function calculateTimeLeft(expiryDateTime) {
 
   return timeleft;
 }
+
+// const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+// const body = document.body;
+
+// toggleDarkModeButton.addEventListener("click", function () {
+//   body.classList.toggle("dark-mode");
+//   console.log("dark");
+// });

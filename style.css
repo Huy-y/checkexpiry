@@ -4,6 +4,13 @@
     display: none;
   }
 
+  #toggleDarkMode{
+    position: absolute;
+    right: 7%;
+    top: 3%;
+    font-size: 20px;
+  }
+
   /* Hiển thị mỗi dòng dữ liệu là một phần tử block */
   table#expiryTable tbody tr {
     display: block;
@@ -70,6 +77,13 @@
   /* Ẩn tiêu đề bảng trên điện thoại di động */
   table#expiryTable thead {
     display: none;
+  }
+
+  #toggleDarkMode{
+    position: absolute;
+    right: 7%;
+    top: 2.5%;
+    font-size: 25px;
   }
 
   /* Hiển thị mỗi dòng dữ liệu là một phần tử block */
@@ -140,6 +154,14 @@
   table#expiryTable thead {
     display: table-header-group;
   }
+
+  #toggleDarkMode{
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    font-size: 27px;
+  }
+
   /* Hiển thị lại các phần tử tbody, tr, td trên máy tính */
   table#expiryTable tbody {
     display: table-row-group;
@@ -164,3 +186,15 @@
     text-align: center;
   }
 }
+
+/* Light mode styles
+body {
+  background-color: #ffffff;
+  color: #000000;
+} */
+
+/* Dark mode styles */
+/* .dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+} */
