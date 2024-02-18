@@ -1,0 +1,166 @@
+@media (max-width: 400px){
+  /* Ẩn tiêu đề bảng trên điện thoại di động */
+  table#expiryTable thead {
+    display: none;
+  }
+
+  /* Hiển thị mỗi dòng dữ liệu là một phần tử block */
+  table#expiryTable tbody tr {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 11px;
+  }
+
+  table#expiryTable tbody {
+    background-color:  #ffffff;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+  }
+
+  /* Định dạng cho mỗi dòng dữ liệu */
+  table#expiryTable tbody tr td {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 50%;
+    position: relative;
+    border: solid #ffffff;  
+  }
+
+  /* Định dạng cho mỗi phần tử tiêu đề */
+  table#expiryTable tbody tr td:before {
+    position: absolute;
+    left: 4%;
+    width: 40%;
+    display: block;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  table#expiryTable tbody tr td:nth-child(1) {
+    border-top: 2px solid #000000;
+    padding-top: 15px;
+  }
+
+  /* Định dạng cho từng tiêu đề */
+  table#expiryTable tbody tr td:nth-child(1)::before {
+    content: "ID"; /* Text bạn muốn hiển thị cho ô số 1 */
+  }
+  table#expiryTable tbody tr td:nth-child(2)::before {
+    content: "Tài khoản"; /* Text bạn muốn hiển thị cho ô số 2 */
+  }
+  table#expiryTable tbody tr td:nth-child(3)::before {
+    content: "Ngày thuê"; /* Text bạn muốn hiển thị cho ô số 3 */
+  }
+  table#expiryTable tbody tr td:nth-child(4)::before {
+    content: "Ngày hết hạn"; /* Text bạn muốn hiển thị cho ô số 4 */
+  }
+  table#expiryTable tbody tr td:nth-child(5)::before {
+    content: "Thời gian thuê"; /* Text bạn muốn hiển thị cho ô số 5 */
+  }
+  table#expiryTable tbody tr td:nth-child(6)::before {
+    content: "Thời gian hết hạn"; /* Text bạn muốn hiển thị cho ô số 6 */
+  }
+}
+
+@media (min-width: 400px) and (max-width: 640px){
+  /* Ẩn tiêu đề bảng trên điện thoại di động */
+  table#expiryTable thead {
+    display: none;
+  }
+
+  /* Hiển thị mỗi dòng dữ liệu là một phần tử block */
+  table#expiryTable tbody tr {
+    display: block;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+
+  table#expiryTable tbody {
+    background-color:  #ffffff;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+  }
+
+  /* Định dạng cho mỗi dòng dữ liệu */
+  table#expiryTable tbody tr td {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 50%;
+    position: relative;
+    border: solid #ffffff;  
+  }
+
+  /* Định dạng cho mỗi phần tử tiêu đề */
+  table#expiryTable tbody tr td:before {
+    position: absolute;
+    left: 4%;
+    width: 40%;
+    display: block;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  table#expiryTable tbody tr td:nth-child(1) {
+    border-top: 2px solid #000000;
+    padding-top: 20px;
+  }
+
+  /* Định dạng cho từng tiêu đề */
+  table#expiryTable tbody tr td:nth-child(1)::before {
+    content: "ID"; /* Text bạn muốn hiển thị cho ô số 1 */
+  }
+  table#expiryTable tbody tr td:nth-child(2)::before {
+    content: "Tài khoản"; /* Text bạn muốn hiển thị cho ô số 2 */
+  }
+  table#expiryTable tbody tr td:nth-child(3)::before {
+    content: "Ngày thuê"; /* Text bạn muốn hiển thị cho ô số 3 */
+  }
+  table#expiryTable tbody tr td:nth-child(4)::before {
+    content: "Ngày hết hạn"; /* Text bạn muốn hiển thị cho ô số 4 */
+  }
+  table#expiryTable tbody tr td:nth-child(5)::before {
+    content: "Thời gian thuê"; /* Text bạn muốn hiển thị cho ô số 5 */
+  }
+  table#expiryTable tbody tr td:nth-child(6)::before {
+    content: "Thời gian hết hạn"; /* Text bạn muốn hiển thị cho ô số 6 */
+  }
+}
+
+/* Dành cho màn hình lớn hơn (máy tính) */
+@media (min-width: 641px) {
+  /* Hiển thị tiêu đề bảng trên máy tính */
+  table#expiryTable thead {
+    display: table-header-group;
+  }
+  /* Hiển thị lại các phần tử tbody, tr, td trên máy tính */
+  table#expiryTable tbody {
+    display: table-row-group;
+  }
+  table#expiryTable tbody tr {
+    display: table-row;
+  }
+  table#expiryTable tbody td {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  /* Đặt lại các ô dữ liệu cho các cột cụ thể */
+  table#expiryTable tbody td:nth-child(1) {
+    text-align: center;
+    width: 10%;
+  }
+  table#expiryTable tbody td:nth-child(2),
+  table#expiryTable tbody td:nth-child(3),
+  table#expiryTable tbody td:nth-child(4),
+  table#expiryTable tbody td:nth-child(5),
+  table#expiryTable tbody td:nth-child(6) {
+    text-align: center;
+  }
+}
