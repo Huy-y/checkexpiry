@@ -119,7 +119,7 @@ expiryData.forEach((data) => {
     duration = "Vô Hạn";
     timeleft = "Vô Hạn";
     row.classList.add("md:bg-blue-100");
-    row.style.display = "none";
+    row.style.display = "";
   } else {
     const buyDateTime = new Date(
       YearBuy,
@@ -188,6 +188,47 @@ expiryData.forEach((data) => {
 
   // Thêm hàng vào bảng
   tableBody.appendChild(row);
+});
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", function () {
+  const searchText = searchInput.value.toLowerCase();
+  const rows = document.querySelectorAll(`table#expiryTable tbody tr`);
+
+  rows.forEach((row) => {
+    const idMatch = row.children[0].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const accountMatch = row.children[1].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const buyDateMatch = row.children[2].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const expiryDateMatch = row.children[3].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const buyLeftMatch = row.children[4].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const expiryLeftMatch = row.children[5].textContent
+      .toLowerCase()
+      .includes(searchText);
+
+    if (
+      idMatch ||
+      accountMatch ||
+      buyDateMatch ||
+      expiryDateMatch ||
+      buyLeftMatch ||
+      expiryLeftMatch
+    ) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
 });
 
 // Tính toán thời gian còn lại từ thời điểm hiện tại đến thời điểm hết hạn
