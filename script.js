@@ -83,6 +83,11 @@ const expiryData = [
     dateBuy: "15/02/2024 - 00:00:00",
     dateExpiry: "15/02/2024 - 22:50:00",
   },
+  {
+    account: "Gizmo",
+    dateBuy: "15/02/2024 - 00:00:00",
+    dateExpiry: "25/02/2024 - 12:00:00",
+  },
 ];
 
 const tableBody = document.querySelector("#expiryTable tbody");
@@ -188,47 +193,6 @@ expiryData.forEach((data) => {
 
   // Thêm hàng vào bảng
   tableBody.appendChild(row);
-});
-
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("input", function () {
-  const searchText = searchInput.value.toLowerCase();
-  const rows = document.querySelectorAll(`table#expiryTable tbody tr`);
-
-  rows.forEach((row) => {
-    const idMatch = row.children[0].textContent
-      .toLowerCase()
-      .includes(searchText);
-    const accountMatch = row.children[1].textContent
-      .toLowerCase()
-      .includes(searchText);
-    const buyDateMatch = row.children[2].textContent
-      .toLowerCase()
-      .includes(searchText);
-    const expiryDateMatch = row.children[3].textContent
-      .toLowerCase()
-      .includes(searchText);
-    const buyLeftMatch = row.children[4].textContent
-      .toLowerCase()
-      .includes(searchText);
-    const expiryLeftMatch = row.children[5].textContent
-      .toLowerCase()
-      .includes(searchText);
-
-    if (
-      idMatch ||
-      accountMatch ||
-      buyDateMatch ||
-      expiryDateMatch ||
-      buyLeftMatch ||
-      expiryLeftMatch
-    ) {
-      row.style.display = "";
-    } else {
-      row.style.display = "none";
-    }
-  });
 });
 
 // Tính toán thời gian còn lại từ thời điểm hiện tại đến thời điểm hết hạn
