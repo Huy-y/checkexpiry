@@ -195,6 +195,47 @@ expiryData.forEach((data) => {
   tableBody.appendChild(row);
 });
 
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", function () {
+  const searchText = searchInput.value.toLowerCase();
+  const rows = document.querySelectorAll(`table#expiryTable tbody tr`);
+
+  rows.forEach((row) => {
+    const idMatch = row.children[0].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const accountMatch = row.children[1].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const buyDateMatch = row.children[2].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const expiryDateMatch = row.children[3].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const buyLeftMatch = row.children[4].textContent
+      .toLowerCase()
+      .includes(searchText);
+    const expiryLeftMatch = row.children[5].textContent
+      .toLowerCase()
+      .includes(searchText);
+
+    if (
+      idMatch ||
+      accountMatch ||
+      buyDateMatch ||
+      expiryDateMatch ||
+      buyLeftMatch ||
+      expiryLeftMatch
+    ) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+  });
+});
+
 // Tính toán thời gian còn lại từ thời điểm hiện tại đến thời điểm hết hạn
 function calculateTimeLeft(expiryDateTime) {
   const now = new Date(); // Thời gian hiện tại
