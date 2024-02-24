@@ -140,7 +140,7 @@ expiryData.forEach((data) => {
     duration = "Vô Hạn";
     timeleft = "Vô Hạn";
     row.classList.add("md:bg-blue-100");
-    row.style.display = "";
+    row.style.display = "none";
   } else {
     const buyDateTime = new Date(
       YearBuy,
