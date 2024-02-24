@@ -1,90 +1,90 @@
 const expiryData = [
   // Acc Player
   {
-    account: "Komaz",
+    player: "Komaz",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "huytranz",
+    player: "huytranz",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "DuyGiuy",
+    player: "DuyGiuy",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "HySatou",
+    player: "HySatou",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "HutCo",
+    player: "HutCo",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "hakdenis",
+    player: "hakdenis",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   // Acc AutoClick
   {
-    account: "OmaReturn",
+    player: "OmaReturn",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "JustPotato",
+    player: "JustPotato",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "LightTeki",
+    player: "LightTeki",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "khang6a4",
+    player: "khang6a4",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "Trieocayy",
+    player: "Trieocayy",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "Cuei0h",
+    player: "Cuei0h",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   // Câu cá
   {
-    account: "AkazaSlayer",
+    player: "AkazaSlayer",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "Auror",
+    player: "Auror",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   {
-    account: "Sylvie",
+    player: "Sylvie",
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
   // Acc test
   {
-    account: "vahia8315",
+    player: "vahia8315",
     dateBuy: "15/02/2024 - 00:00:00",
     dateExpiry: "15/02/2024 - 22:50:00",
   },
   {
-    account: "Gizmo",
+    player: "Gizmo",
     dateBuy: "15/02/2024 - 00:00:00",
     dateExpiry: "25/02/2024 - 12:00:00",
   },
@@ -184,7 +184,7 @@ expiryData.forEach((data) => {
   // Tạo nội dung cho hàng
   row.innerHTML = `
         <td class="font-semibold py-2 text-center border-r border-t">${data.id}</td>
-        <td class="font-semibold py-2 text-center border-r border-t">${data.account}</td>
+        <td class="font-semibold py-2 text-center border-r border-t">${data.player}</td>
         <td class="font-semibold py-2 text-center border-r border-t">${data.dateBuy}</td>
         <td class="font-semibold py-2 text-center border-r border-t">${data.dateExpiry}</td>
         <td class="font-semibold py-2 text-center border-r border-t">${duration}</td>
@@ -205,7 +205,7 @@ searchInput.addEventListener("input", function () {
     const idMatch = row.children[0].textContent
       .toLowerCase()
       .includes(searchText);
-    const accountMatch = row.children[1].textContent
+    const playerMatch = row.children[1].textContent
       .toLowerCase()
       .includes(searchText);
     const buyDateMatch = row.children[2].textContent
@@ -223,7 +223,7 @@ searchInput.addEventListener("input", function () {
 
     if (
       idMatch ||
-      accountMatch ||
+      playerMatch ||
       buyDateMatch ||
       expiryDateMatch ||
       buyLeftMatch ||
