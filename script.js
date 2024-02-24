@@ -91,18 +91,18 @@ const expiryData = [
   // Acc Thuê
   {
     player: "Chubedanx",
-    dateBuy: "25/02/2024 - 00:00:00",
-    dateExpiry: "28/02/2024 - 00:00:00",
+    dateBuy: "26/02/2024 - 00:00:00",
+    dateExpiry: "29/02/2024 - 00:00:00",
   },
   {
     player: "Chubedanz",
-    dateBuy: "25/02/2024 - 00:00:00",
-    dateExpiry: "28/02/2024 - 00:00:00",
+    dateBuy: "26/02/2024 - 00:00:00",
+    dateExpiry: "29/02/2024 - 00:00:00",
   },
   {
     player: "Nhatth3",
-    dateBuy: "25/02/2024 - 00:00:00",
-    dateExpiry: "28/02/2024 - 00:00:00",
+    dateBuy: "26/02/2024 - 00:00:00",
+    dateExpiry: "29/02/2024 - 00:00:00",
   },
 ];
 
