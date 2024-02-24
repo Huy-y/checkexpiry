@@ -88,6 +88,22 @@ const expiryData = [
     dateBuy: "15/02/2024 - 00:00:00",
     dateExpiry: "25/02/2024 - 12:00:00",
   },
+  // Acc Thuê
+  {
+    player: "Chubedanx",
+    dateBuy: "25/02/2024 - 00:00:00",
+    dateExpiry: "28/02/2024 - 00:00:00",
+  },
+  {
+    player: "Chubedanz",
+    dateBuy: "25/02/2024 - 00:00:00",
+    dateExpiry: "28/02/2024 - 00:00:00",
+  },
+  {
+    player: "Nhatth3",
+    dateBuy: "25/02/2024 - 00:00:00",
+    dateExpiry: "28/02/2024 - 00:00:00",
+  },
 ];
 
 const tableBody = document.querySelector("#expiryTable tbody");
