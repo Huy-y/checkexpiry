@@ -173,15 +173,17 @@ expiryData.forEach((data) => {
       if (remainingDays === 0) {
         duration = `${years} năm`;
       } else {
-        duration = `${years} năm và ${remainingDays} ngày`;
+        duration = `${years} năm ${remainingDays} ngày`;
       }
     } else {
-      if (days > 0) {
-        duration = `${days} ngày và ${hours} giờ`;
+      if (days > 0 && hours === 0) {
+        duration = `${days} ngày`;
+      } else if (days > 0) {
+        duration = `${days} ngày ${hours} giờ`;
       } else if (hours > 0) {
-        duration = `${hours} giờ và ${minutes} phút`;
+        duration = `${hours} giờ ${minutes} phút`;
       } else if (minutes > 1) {
-        duration = `${minutes} phút và ${seconds} giây`;
+        duration = `${minutes} phút ${seconds} giây`;
       } else if (minutes === 1) {
         duration = `1 phút`;
       } else {
@@ -273,12 +275,14 @@ function calculateTimeLeft(expiryDateTime) {
     diffInMs %= 1000 * 60;
     const seconds = Math.floor(diffInMs / 1000);
     // Kiểm tra nếu năm hết hạn là 9999 thì trả về "Vô Hạn"
-    if (days > 0) {
+    if (days > 0 && hours === 0) {
       timeleft += `${days} ngày `;
+    } else if (days > 0) {
+      timeleft += `${days} ngày ${hours} giờ`;
     } else if (hours > 0) {
-      timeleft += `${hours} giờ `;
+      timeleft += `${hours} giờ ${minutes} phút`;
     } else if (minutes > 0) {
-      timeleft += `${minutes} phút `;
+      timeleft += `${minutes} phút ${seconds} giây`;
     } else {
       timeleft += `${seconds} giây`;
     }
