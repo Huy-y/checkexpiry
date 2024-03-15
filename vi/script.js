@@ -1,5 +1,5 @@
 let expiryData;
-fetch("account.json")
+fetch("../account.json")
   .then((response) => {
     return response.json();
   })
@@ -38,8 +38,8 @@ fetch("account.json")
       let timeleft;
 
       if (YearExpiry.includes("9999")) {
-        duration = "Infinite";
-        timeleft = "Infinite";
+        duration = "Vô Hạn";
+        timeleft = "Vô Hạn";
         row.style.display = "";
       } else {
         const buyDateTime = new Date(
@@ -70,38 +70,28 @@ fetch("account.json")
         if (days > 365) {
           const years = Math.floor(days / 365);
           const remainingDays = days % 365;
-          duration = `${years} year${years !== 1 ? "s" : ""}${
-            remainingDays === 0
-              ? ""
-              : ` ${remainingDays} day${remainingDays !== 1 ? "s" : ""}`
+          duration = `${years} năm${
+            remainingDays === 0 ? "" : ` ${remainingDays} ngày`
           }`;
         } else if (days > 0) {
-          duration = `${days} day${days !== 1 ? "s" : ""}${
-            hours > 0 ? ` ${hours} hour${hours !== 1 ? "s" : ""}` : ""
-          }${
-            minutes > 0 ? ` ${minutes} minute${minutes !== 1 ? "s" : ""}` : ""
-          }${
-            seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
-          }`;
+          duration = `${days} ngày${hours > 0 ? ` ${hours} giờ` : ""}${
+            minutes > 0 ? ` ${minutes} phút` : ""
+          }${seconds > 0 ? ` ${seconds} giây` : ""}`;
         } else if (hours > 0) {
-          duration = `${hours} hour${hours !== 1 ? "s" : ""}${
-            minutes > 0 ? ` ${minutes} minute${minutes !== 1 ? "s" : ""}` : ""
-          }${
-            seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
+          duration = `${hours} giờ${minutes > 0 ? ` ${minutes} phút` : ""}${
+            seconds > 0 ? ` ${seconds} giây` : ""
           }`;
         } else if (minutes > 0) {
-          duration = `${minutes} minute${minutes !== 1 ? "s" : ""}${
-            seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
-          }`;
+          duration = `${minutes} phút${seconds > 0 ? ` ${seconds} giây` : ""}`;
         } else {
-          duration = `${seconds} second${seconds !== 1 ? "s" : ""}`;
+          duration = `${seconds} giây`;
         }
       }
 
-      if (timeleft === "Expired" && data.type === "Renter") {
+      if (timeleft === "Đã hết hạn" && data.type === "Renter") {
         row.classList.remove("md:bg-pink-100");
         row.classList.add("md:bg-red-300");
-      } else if (timeleft === "Infinite") {
+      } else if (timeleft === "Vô Hạn") {
         if (data.type === "Player") {
           row.classList.add("md:bg-green-300");
         } else if (data.type === "Cloner") {
@@ -191,7 +181,7 @@ fetch("account.json")
 
       // If the remaining time is smaller or zero, ie Expired
       if (diffInMs <= 0) {
-        timeleft = "Expired";
+        timeleft = "Đã hết hạn";
       } else {
         // Convert the remaining time into Hours, Minutes and Seconds
         const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
@@ -203,15 +193,15 @@ fetch("account.json")
         const seconds = Math.floor(diffInMs / 1000);
         // Check if the expiration year is 9999, then return "infinite"
         if (days > 0 && hours === 0) {
-          timeleft += `${days} days `;
+          timeleft += `${days} ngày `;
         } else if (days > 0) {
-          timeleft += `${days} days ${hours} hours`;
+          timeleft += `${days} ngày ${hours} giờ`;
         } else if (hours > 0) {
-          timeleft += `${hours} hours ${minutes} minutes`;
+          timeleft += `${hours} giờ ${minutes} phút`;
         } else if (minutes > 0) {
-          timeleft += `${minutes} minutes ${seconds} seconds`;
+          timeleft += `${minutes} phút ${seconds} giây`;
         } else {
-          timeleft += `${seconds} seconds`;
+          timeleft += `${seconds} giây`;
         }
       }
 
@@ -223,7 +213,7 @@ fetch("account.json")
     const ColorTable = document.getElementById("ColorTable");
     let isColorTableVisible = false;
 
-    // Toggle Color Table
+    // Hiển thị hoặc ẩn bảng màu
     function toggleColorTable() {
       if (!isColorTableVisible) {
         ColorTable.classList.remove("hidden");

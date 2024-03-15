@@ -57,19 +57,19 @@
     content: "ID"; /* Text bạn muốn hiển thị cho ô số 1 */
   }
   table#expiryTable tbody tr td:nth-child(2)::before {
-    content: "Account"; /* Text bạn muốn hiển thị cho ô số 2 */
+    content: "Tài khoản"; /* Text bạn muốn hiển thị cho ô số 2 */
   }
   table#expiryTable tbody tr td:nth-child(3)::before {
-    content: "Date of rental"; /* Text bạn muốn hiển thị cho ô số 3 */
+    content: "Ngày thuê"; /* Text bạn muốn hiển thị cho ô số 3 */
   }
   table#expiryTable tbody tr td:nth-child(4)::before {
-    content: "Expiration date"; /* Text bạn muốn hiển thị cho ô số 4 */
+    content: "Ngày hết hạn"; /* Text bạn muốn hiển thị cho ô số 4 */
   }
   table#expiryTable tbody tr td:nth-child(5)::before {
-    content: "Rental period"; /* Text bạn muốn hiển thị cho ô số 5 */
+    content: "Thời gian thuê"; /* Text bạn muốn hiển thị cho ô số 5 */
   }
   table#expiryTable tbody tr td:nth-child(6)::before {
-    content: "Expired time"; /* Text bạn muốn hiển thị cho ô số 6 */
+    content: "Thời gian hết hạn"; /* Text bạn muốn hiển thị cho ô số 6 */
   }
 }
 

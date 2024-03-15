@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software Check</title>
+    <title>Thông tin Thời hạn</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
@@ -19,15 +19,15 @@
 
   <body class="bg-gray-100 p-6 text-center">
     <div class="md:text-3xl md:mx-auto md:text-center font-bold text-xl">
-      SOFTWARE EXPIRY DATE
+      HẠN SỬ DỤNG PHẦN MỀM
       <!-- Language Toggle Button -->
       <div class="flex flex-col mt-2 gap-2">
-        <div class="text-xs">Click to change language</div>
+        <div class="text-xs">Bấm để đổi ngôn ngữ</div>
         <button
           id="languageToggle"
           class="border border-black text-sm rounded-2xl px-10 hover:bg-black hover:text-white"
         >
-          Vietnamese
+          English
         </button>
       </div>
       <i
@@ -42,43 +42,43 @@
         <!-- Player -->
         <div class="flex flex-row">
           <div class="w-4 h-4 bg-green-300 mr-2 rounded"></div>
-          <p class="text-sm">Player</p>
+          <p class="text-sm">Người dùng</p>
         </div>
 
         <!-- Cloner -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-amber-300 mr-2 rounded"></div>
-          <p class="text-sm">Cloner</p>
+          <p class="text-sm">Acc clone</p>
         </div>
 
         <!-- Clicker -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-stone-300 mr-2 rounded"></div>
-          <p class="text-sm">Clicker</p>
+          <p class="text-sm">Auto click</p>
         </div>
 
         <!-- Fisher -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-sky-300 mr-2 rounded"></div>
-          <p class="text-sm">Fisher</p>
+          <p class="text-sm">Câu cá</p>
         </div>
 
         <!-- Tester -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-orange-300 mr-2 rounded"></div>
-          <p class="text-sm">Tester</p>
+          <p class="text-sm">Người test</p>
         </div>
 
         <!-- Renter -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-fuchsia-300 mr-2 rounded"></div>
-          <p class="text-sm">Renter</p>
+          <p class="text-sm">Người thuê</p>
         </div>
 
         <!-- Renter Expired -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-red-300 mr-2 rounded"></div>
-          <p class="text-sm">Renter Expired</p>
+          <p class="text-sm">Hết hạn</p>
         </div>
 
         <!-- Other -->
@@ -86,7 +86,7 @@
           <div
             class="w-4 h-4 bg-red-900 mr-2 rounded border border-2 border-black"
           ></div>
-          <p class="text-sm">Other</p>
+          <p class="text-sm">Khác</p>
         </div>
 
         <!-- Divider -->
@@ -94,26 +94,26 @@
 
         <!-- Time Region -->
         <div id="dateNow" class="flex flex-row">
-          <p class="text-sm">Time Zone: UTC+7</p>
+          <p class="text-sm">Khu vực: UTC+7</p>
         </div>
 
         <!-- Date Now -->
         <div id="dateNow" class="flex flex-row mt-2">
-          <p class="text-sm">Date Now: <span id="currentDate"></span></p>
+          <p class="text-sm">Ngày: <span id="currentDate"></span></p>
         </div>
 
         <!-- Time Now -->
         <div id="timeNow" class="flex flex-row mt-2">
-          <p class="text-sm">Time Now: <span id="currentTime"></span></p>
+          <p class="text-sm">Thời gian: <span id="currentTime"></span></p>
         </div>
         <!-- Language Toggle Button -->
         <div class="flex flex-col mt-2 gap-2">
-          <div class="text-xs">Click to change language</div>
+          <div class="text-xs">Bấm để đổi ngôn ngữ</div>
           <button
             id="languageToggle"
             class="border border-black text-sm rounded-2xl px-10 hover:bg-black hover:text-white"
           >
-            Vietnamese
+            English
           </button>
         </div>
       </div>
@@ -122,7 +122,7 @@
       class="border-black border-2 rounded-xl my-3 w-full text-center text-sm font-semibold"
       type="text"
       id="searchInput"
-      placeholder="Search..."
+      placeholder="Tìm kiếm..."
     />
     <div>
       <table
@@ -132,11 +132,11 @@
         <thead class="hidden sm:table-header-group">
           <tr class="bg-gray-400">
             <th class="py-2 text-center">ID</th>
-            <th class="px-2 sm:px-4 py-2 text-center">Account</th>
-            <th class="px-2 sm:px-4 py-2 text-center">Date of rental</th>
-            <th class="px-2 sm:px-4 py-2 text-center">Expiration date</th>
-            <th class="px-2 sm:px-2 py-2 text-center">Rental period</th>
-            <th class="px-2 sm:px-2 py-2 text-center">Expired time</th>
+            <th class="px-2 sm:px-4 py-2 text-center">Tài Khoản</th>
+            <th class="px-2 sm:px-4 py-2 text-center">Ngày Thuê</th>
+            <th class="px-2 sm:px-4 py-2 text-center">Ngày Hết Hạn</th>
+            <th class="px-2 sm:px-2 py-2 text-center">Thời Gian Thuê</th>
+            <th class="px-2 sm:px-2 py-2 text-center">Thời Gian Hết Hạn</th>
           </tr>
         </thead>
 
@@ -149,8 +149,8 @@
       const languageToggle = document.getElementById("languageToggle");
 
       function toggleLanguage() {
-        localStorage.setItem("language", "Vietnamese");
-        window.location.href = "/vi";
+        localStorage.setItem("language", "English");
+        window.location.href = "../";
       }
 
       languageToggle.addEventListener("click", toggleLanguage);
