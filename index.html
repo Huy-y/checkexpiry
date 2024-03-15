@@ -21,10 +21,10 @@
     <div class="md:text-3xl md:mx-auto md:text-center font-bold text-xl">
       SOFTWARE EXPIRY DATE
       <!-- Language Toggle Button -->
-      <div class="flex flex-col mt-2 gap-2">
+      <div class="flex flex-col mt-2 gap-2 md:hidden">
         <div class="text-xs">Click to change language</div>
         <button
-          id="languageToggle"
+          id="languageTogglePhone"
           class="border border-black text-sm rounded-2xl px-10 hover:bg-black hover:text-white"
         >
           Vietnamese
@@ -147,13 +147,21 @@
     <script src="script.js"></script>
     <script>
       const languageToggle = document.getElementById("languageToggle");
+      const languageTogglePhone = document.getElementById(
+        "languageTogglePhone"
+      );
 
       function toggleLanguage() {
         localStorage.setItem("language", "Vietnamese");
         window.location.href = "/vi";
       }
+      function togglePhone() {
+        localStorage.setItem("language", "Vietnamese");
+        window.location.href = "/vi";
+      }
 
       languageToggle.addEventListener("click", toggleLanguage);
+      languageTogglePhone.addEventListener("click", togglePhone);
     </script>
   </body>
 </html>
