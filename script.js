@@ -30,6 +30,11 @@ const expiryData = [
     dateBuy: "01/01/2024 - 00:00:00",
     dateExpiry: "01/01/9999 - 00:00:00",
   },
+  {
+    player: "The_Fallen",
+    dateBuy: "01/01/2024 - 00:00:00",
+    dateExpiry: "01/01/9999 - 00:00:00",
+  },
   // Acc AutoClick
   {
     player: "OmaReturn",
