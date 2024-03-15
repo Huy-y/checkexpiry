@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="./style.css" rel="stylesheet" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
     />
     <link
@@ -17,16 +17,67 @@
     />
   </head>
 
-  <body class="flex flex-col bg-gray-100 p-6">
+  <body class="bg-gray-100 p-6 text-center">
     <!-- <button
       id="toggleDarkMode"
       class="text-gray-600 dark:text-gray-300 rounded-full"
     >
       <i class="fas fa-adjust"></i>
     </button> -->
-
     <div class="md:text-3xl md:mx-auto md:text-center font-bold text-xl">
       Hạn sử dụng phần mềm
+      <i
+        id="helpIcon"
+        class="fa-regular fa-circle-question hidden md:block absolute right-12 top-8 text-2xl cursor-pointer"
+      ></i>
+      <!-- Bảng chỉ dẫn màu -->
+      <div
+        id="colorLegend"
+        class="hidden flex flex-col absolute bg-white p-4 right-6 top-16 border border-gray-300 rounded shadow-md"
+      >
+        <!-- Player -->
+        <div class="flex flex-row">
+          <div class="w-4 h-4 bg-green-300 mr-2 rounded"></div>
+          <p class="text-xs">Player</p>
+        </div>
+        <!-- Cloner -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-amber-300 mr-2 rounded"></div>
+          <p class="text-xs">Cloner</p>
+        </div>
+        <!-- Clicker -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-stone-300 mr-2 rounded"></div>
+          <p class="text-xs">Clicker</p>
+        </div>
+        <!-- Fisher -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-sky-300 mr-2 rounded"></div>
+          <p class="text-xs">Fisher</p>
+        </div>
+        <!-- Tester -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-orange-300 mr-2 rounded"></div>
+          <p class="text-xs">Tester</p>
+        </div>
+        <!-- Renter -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-fuchsia-300 mr-2 rounded"></div>
+          <p class="text-xs">Renter</p>
+        </div>
+        <!-- Renter Expired -->
+        <div class="flex flex-row mt-2">
+          <div class="w-4 h-4 bg-red-300 mr-2 rounded"></div>
+          <p class="text-xs">Renter Expired</p>
+        </div>
+        <!-- Other -->
+        <div class="flex flex-row mt-2">
+          <div
+            class="w-4 h-4 bg-red-900 mr-2 rounded border border-2 border-black"
+          ></div>
+          <p class="text-xs">Other</p>
+        </div>
+      </div>
     </div>
     <input
       class="border-black border-2 rounded-xl my-3 w-full text-center text-lg font-semibold"

@@ -212,6 +212,20 @@ fetch("account.json")
       return timeleft;
     }
 
+    // Lấy biểu tượng và bảng chỉ dẫn màu
+    const helpIcon = document.getElementById("helpIcon");
+    const colorLegend = document.getElementById("colorLegend");
+
+    // Khi di chuột qua biểu tượng, hiển thị bảng chỉ dẫn màu
+    helpIcon.addEventListener("mouseover", function () {
+      colorLegend.classList.remove("hidden");
+    });
+
+    // Khi di chuột ra khỏi biểu tượng, ẩn bảng chỉ dẫn màu
+    helpIcon.addEventListener("mouseout", function () {
+      colorLegend.classList.add("hidden");
+    });
+
     // const toggleDarkModeButton = document.getElementById("toggleDarkMode");
     // const body = document.body;
 
