@@ -449,10 +449,12 @@ let isColorTableVisible = false;
 
 // Toggle Color Table
 function toggleColorTable() {
-  if (!isColorTableVisible) {
-    ColorTable.classList.remove("hidden");
-  }
   isColorTableVisible = !isColorTableVisible;
+  if (isColorTableVisible) {
+    ColorTable.classList.remove("hidden");
+  } else {
+    ColorTable.classList.add("hidden");
+  }
 }
 
 // Attach the event to click on the icon
@@ -465,11 +467,12 @@ helpIcon.addEventListener("mouseover", function () {
 
 // When the mouse is out of the icon, hide the color guide if it's not fully visible
 helpIcon.addEventListener("mouseout", function (event) {
-  if (!event.relatedTarget || !event.relatedTarget.closest("#ColorTable")) {
+  if (!event.relatedTarget || !event.relatedTarget.closest(ColorTable)) {
     ColorTable.classList.add("hidden");
     isColorTableVisible = false;
   }
 });
+
 // Save the state of rolls when the user rolls the page
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
