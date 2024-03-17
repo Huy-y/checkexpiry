@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software Check</title>
+    <title>Thông tin hạn sử dụng</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       rel="stylesheet"
@@ -19,7 +19,7 @@
 
   <body class="p-6 text-center">
     <div class="md:text-3xl md:mx-auto md:text-center font-bold text-xl">
-      <h1>SOFTWARE EXPIRY DATE</h1>
+      <h1>HẠN SỬ DỤNG PHẦN MỀM</h1>
 
       <!-- Help Icon -->
       <i
@@ -42,7 +42,7 @@
         <!-- Player -->
         <div class="flex flex-row">
           <div class="w-4 h-4 bg-green-300 mr-2 rounded"></div>
-          <p class="text-sm">Player</p>
+          <p class="text-sm">Người dùng</p>
         </div>
 
         <!-- Cloner -->
@@ -60,7 +60,7 @@
         <!-- Fisher -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-sky-300 mr-2 rounded"></div>
-          <p class="text-sm">Fisher</p>
+          <p class="text-sm">Câu cá</p>
         </div>
 
         <!-- Tester -->
@@ -72,13 +72,13 @@
         <!-- Renter -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-fuchsia-300 mr-2 rounded"></div>
-          <p class="text-sm">Renter</p>
+          <p class="text-sm">Người thuê</p>
         </div>
 
         <!-- Renter Expired -->
         <div class="flex flex-row mt-2">
           <div class="w-4 h-4 bg-red-300 mr-2 rounded"></div>
-          <p class="text-sm">Renter Expired</p>
+          <p class="text-sm">Hết hạn</p>
         </div>
 
         <!-- Other -->
@@ -86,7 +86,7 @@
           <div
             class="w-4 h-4 bg-red-900 mr-2 rounded border border-2 border-black"
           ></div>
-          <p class="text-sm">Other</p>
+          <p class="text-sm">Khác</p>
         </div>
 
         <!-- Divider -->
@@ -99,22 +99,22 @@
 
         <!-- Date Now -->
         <div id="dateNow" class="flex flex-row mt-2">
-          <p class="text-sm">Date Now: <span id="currentDate"></span></p>
+          <p class="text-sm">Ngày: <span id="currentDate"></span></p>
         </div>
 
         <!-- Time Now -->
         <div id="timeNow" class="flex flex-row mt-2">
-          <p class="text-sm">Time Now: <span id="currentTime"></span></p>
+          <p class="text-sm">Giờ: <span id="currentTime"></span></p>
         </div>
 
         <!-- Language Toggle Button -->
         <div class="flex flex-col mt-2 gap-2">
-          <div class="text-xs">Click to change language</div>
+          <div class="text-xs">Bấm để đổi ngôn ngữ</div>
           <button
             id="languageToggle"
             class="border border-black text-sm rounded-2xl px-10 hover:bg-black hover:text-white"
           >
-            Vietnamese
+            English
           </button>
         </div>
       </div>
@@ -135,11 +135,11 @@
       <div class="py-2 bg-gray-300 border flex justify-between">
         <div class="w-full flex justify-center font-bold">
           <div class="w-1/6 border-r border-black">ID</div>
-          <div class="w-2/3 border-r border-black">Account</div>
-          <div class="w-2/3 border-r border-black">Date of rental</div>
-          <div class="w-2/3 border-r border-black">Expiration date</div>
-          <div class="w-2/3 border-r border-black">Rental period</div>
-          <div class="w-2/3">Expired time</div>
+          <div class="w-2/3 border-r border-black">Người dùng</div>
+          <div class="w-2/3 border-r border-black">Ngày thuê</div>
+          <div class="w-2/3 border-r border-black">Ngày hết hạn</div>
+          <div class="w-2/3 border-r border-black">Thời gian thuê</div>
+          <div class="w-2/3">Thời gian hết hạn</div>
         </div>
       </div>
     </div>
@@ -160,7 +160,7 @@
       id="searchResults"
       class="hidden mt-8 text-center text-3xl text-black font-semibold"
     >
-      Not found
+      Không tìm thấy
     </div>
 
     <script src="script.js"></script>
@@ -169,7 +169,7 @@
 
       function toggleLanguage() {
         localStorage.setItem("language", "Vietnamese");
-        window.location.href = "https://huy-y.github.io/checkexpiry/vi";
+        window.location.href = "https://huy-y.github.io/checkexpiry/";
       }
 
       languageToggle.addEventListener("click", toggleLanguage);
