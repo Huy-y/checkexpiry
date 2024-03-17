@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("../account.json")
+  fetch("account.json")
     .then((response) => response.json())
     .then((data) => {
       const cardContainer = document.getElementById("cardContainer");
@@ -11,13 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const expiryDateRegex =
         /^(\d{2})\/(\d{2})\/(\d{4}) - (\d{2}):(\d{2}):(\d{2})$/;
       let idCounter = 1;
-
       data.forEach((item) => {
         // Take the components of Days Buy and Days expires from the Chain of using ReGEX
         const buyDateMatch = item.dateBuy.match(buyDateRegex);
         const expiryDateMatch = item.dateExpiry.match(expiryDateRegex);
 
-        // Extracting the components of Days Buy and Days Expired from the Match results
+        // Extracting the components of Days Buy and Days expired from the Match results
         const DayBuy = buyDateMatch[1];
         const MonthBuy = buyDateMatch[2];
         const YearBuy = buyDateMatch[3];
@@ -33,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const SecondExpiry = expiryDateMatch[6];
 
         if (YearExpiry.includes("9999")) {
-          duration = "Không giới hạn";
-          timeleft = "Không giới hạn";
+          duration = "Infinite";
+          timeleft = "Infinite";
         } else {
           const buyDateTime = new Date(
             YearBuy,
@@ -66,23 +65,31 @@ document.addEventListener("DOMContentLoaded", function () {
           if (days > 365) {
             const years = Math.floor(days / 365);
             const remainingDays = days % 365;
-            duration = `${years} năm${
-              remainingDays === 0 ? "" : ` ${remainingDays} ngày`
+            duration = `${years} year${years !== 1 ? "s" : ""}${
+              remainingDays === 0
+                ? ""
+                : ` ${remainingDays} day${remainingDays !== 1 ? "s" : ""}`
             }`;
           } else if (days > 0) {
-            duration = `${days} ngày${hours > 0 ? ` ${hours} giờ` : ""}${
-              minutes > 0 ? ` ${minutes} phút` : ""
-            }${seconds > 0 ? ` ${seconds} giây` : ""}`;
+            duration = `${days} day${days !== 1 ? "s" : ""}${
+              hours > 0 ? ` ${hours} hour${hours !== 1 ? "s" : ""}` : ""
+            }${
+              minutes > 0 ? ` ${minutes} minute${minutes !== 1 ? "s" : ""}` : ""
+            }${
+              seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
+            }`;
           } else if (hours > 0) {
-            duration = `${hours} giờ${minutes > 0 ? ` ${minutes} phút` : ""}${
-              seconds > 0 ? ` ${seconds} giây` : ""
+            duration = `${hours} hour${hours !== 1 ? "s" : ""}${
+              minutes > 0 ? ` ${minutes} minute${minutes !== 1 ? "s" : ""}` : ""
+            }${
+              seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
             }`;
           } else if (minutes > 0) {
-            duration = `${minutes} phút${
-              seconds > 0 ? ` ${seconds} giây` : ""
+            duration = `${minutes} minute${minutes !== 1 ? "s" : ""}${
+              seconds > 0 ? ` ${seconds} second${seconds !== 1 ? "s" : ""}` : ""
             }`;
           } else {
-            duration = `${seconds} giây`;
+            duration = `${seconds} second${seconds !== 1 ? "s" : ""}`;
           }
         }
 
@@ -100,10 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const card2 = document.createElement("div");
         card2.classList.add("py-2", "border", "flex", "justify-between");
 
-        if (timeleft === "Hết Hạn" && item.type === "Renter") {
+        if (timeleft === "Expired" && item.type === "Renter") {
           card2.classList.add("bg-red-200");
           card2.classList.add("lg:bg-red-300");
-        } else if (timeleft === "Không giới hạn") {
+        } else if (timeleft === "Infinite") {
           if (item.type === "Player") {
             card2.classList.add("bg-green-200");
             card2.classList.add("lg:bg-green-300");
@@ -184,8 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const dateBuyLabel = document.createElement("div");
         const dateBuy = document.createElement("div");
         dateBuyLabel.classList.add("lg:hidden");
-        dateBuy.classList.add("date-buy");
         dateBuyPack.classList.add(
+          "date-buy",
           "flex",
           "flex-row-reverse",
           "gap-2",
@@ -204,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "lg:border-r",
           "lg:border-b-0"
         );
-        dateBuyLabel.textContent = "Ngày thuê: ";
+        dateBuyLabel.textContent = "Date of rental: ";
         dateBuy.textContent = item.dateBuy;
 
         // Create Date Expiry
@@ -212,8 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const dateExpiryLabel = document.createElement("div");
         const dateExpiry = document.createElement("div");
         dateExpiryLabel.classList.add("lg:hidden");
-        dateExpiry.classList.add("date-expiry");
         dateExpiryPack.classList.add(
+          "date-expiry",
           "flex",
           "flex-row-reverse",
           "gap-2",
@@ -231,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "lg:border-r",
           "lg:border-b-0"
         );
-        dateExpiryLabel.textContent = "Ngày hết hạn: ";
+        dateExpiryLabel.textContent = "Expiration date: ";
         dateExpiry.textContent = item.dateExpiry;
 
         // Create Rental period
@@ -239,8 +246,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const durationtimeLabel = document.createElement("div");
         const durationtime = document.createElement("div");
         durationtimeLabel.classList.add("lg:hidden");
-        durationtime.classList.add("date-rent");
         durationtimePack.classList.add(
+          "date-rent",
           "flex",
           "flex-row-reverse",
           "gap-2",
@@ -259,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "lg:border-r",
           "lg:border-y-0"
         );
-        durationtimeLabel.textContent = "Thời gian thuê: ";
+        durationtimeLabel.textContent = "Rental period: ";
         durationtime.textContent = duration;
 
         // Create Expired time
@@ -267,8 +274,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const expirytimeLabel = document.createElement("div");
         const expirytime = document.createElement("div");
         expirytimeLabel.classList.add("lg:hidden");
-        expirytime.classList.add("expiry-time");
         expirytimePack.classList.add(
+          "expiry-time",
           "flex",
           "flex-row-reverse",
           "gap-2",
@@ -287,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "lg:w-2/3",
           "lg:border-0"
         );
-        expirytimeLabel.textContent = "Thời gian hết hạn: ";
+        expirytimeLabel.textContent = "Expired time: ";
         expirytime.textContent = timeleft;
 
         // Add element to card
@@ -327,9 +334,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let diffInMs = expiryDateTime - now.getTime();
         let timeleft = "";
 
-        // If the remaining time is smaller or zero, is Expired
+        // If the remaining time is smaller or zero, ie Expired
         if (diffInMs <= 0) {
-          timeleft = "Hết Hạn";
+          timeleft = "Expired";
         } else {
           // Convert the remaining time into Hours, Minutes and Seconds
           const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
@@ -339,17 +346,17 @@ document.addEventListener("DOMContentLoaded", function () {
           const minutes = Math.floor(diffInMs / (1000 * 60));
           diffInMs %= 1000 * 60;
           const seconds = Math.floor(diffInMs / 1000);
-          // Check if the expiration year is 9999, then return "Infinite"
+          // Check if the expiration year is 9999, then return "infinite"
           if (days > 0 && hours === 0) {
-            timeleft += `${days} ngày `;
+            timeleft += `${days} days `;
           } else if (days > 0) {
-            timeleft += `${days} ngày ${hours} giờ`;
+            timeleft += `${days} days ${hours} hours`;
           } else if (hours > 0) {
-            timeleft += `${hours} giờ ${minutes} phút`;
+            timeleft += `${hours} hours ${minutes} minutes`;
           } else if (minutes > 0) {
-            timeleft += `${minutes} phút ${seconds} giây`;
+            timeleft += `${minutes} minutes ${seconds} seconds`;
           } else {
-            timeleft += `${seconds} giây`;
+            timeleft += `${seconds} seconds`;
           }
         }
 
