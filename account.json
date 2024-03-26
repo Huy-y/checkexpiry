@@ -108,6 +108,12 @@
         "dateExpiry": "01/01/9999 - 00:00:00"
     },
     {
+        "player": "ABCK4",
+        "type": "Clicker",
+        "dateBuy": "01/01/2024 - 00:00:00",
+        "dateExpiry": "01/01/9999 - 00:00:00"
+    },
+    {
         "player": "AkazaSlayer",
         "type": "Fisher",
         "dateBuy": "01/01/2024 - 00:00:00",
